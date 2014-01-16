@@ -30,7 +30,7 @@ class SpecialInterwikiUsage extends SpecialPage {
          array( 'page_id', 'page_namespace', 'page_title', 'iwl_from', 'iwl_prefix', 'iwl_title' ),
          $where,
          __METHOD__,
-         array(),
+         array( 'ORDER BY' => 'iwl_prefix ASC' ),
          array( 'page' => array( 'INNER JOIN', array( 'iwl_from=page_id' ) ) )
       );
       $interwikis = array();
